@@ -1,0 +1,34 @@
+@use '@/styles/helpers' as *;
+
+.paginate {
+  @include flex(center);
+  margin-top: 40px;
+  gap: 20px;
+
+  &__pages {
+    @include flex(center);
+    gap: 5px;
+
+    &__page {
+      background-color: var(--bg-color);
+      padding: 1px 10px;
+      color: var(--heading-color);
+      border-bottom: 1px solid var(--bg-color);
+
+      &--active {
+        border-radius: 5px;
+        color: var(--heading-color);
+        padding: 1px 10px;
+        background-color: var(--secondary-color);
+      }
+
+      &:hover {
+        border-bottom: 1px solid var(--placeholder-color);
+      }
+    }
+  }
+
+  &__arrow--left {
+    transform: scale(-1);
+  }
+}

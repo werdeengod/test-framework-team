@@ -1,0 +1,17 @@
+@use "@/styles/helpers" as *;
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-family-base);
+  margin: 0 100px;
+  transition: 0.2s background-color ease-in-out;
+
+  @include tablet {
+    margin: 0 20px;
+  }
+}

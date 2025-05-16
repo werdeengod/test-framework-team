@@ -1,0 +1,16 @@
+@mixin flex($justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin square($rem) {
+  width: $rem;
+  height: $rem;
+}
+
+@mixin align-left-edge {
+  position: absolute;
+  bottom: 0;
+}

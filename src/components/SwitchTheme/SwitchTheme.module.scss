@@ -1,0 +1,14 @@
+@use "@/styles/helpers" as *;
+
+.button--switch {
+  @include square(toRem(40));
+  @include flex(center, center);
+
+  border-radius: 100%;
+  background-color: var(--secondary-color);
+  transition: 0.3s background-color ease-in-out;
+
+  &:hover {
+    background-color: var(--secondary-color-hover);
+  }
+}

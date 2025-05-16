@@ -1,0 +1,61 @@
+@use "@/styles/helpers" as *;
+
+h1,
+h2 {
+  font-family: var(--font-family-accent);
+  text-transform: uppercase;
+  color: var();
+  line-height: 100%;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: toRem(16);
+
+  @include mobile {
+    font-size: toRem(12);
+  }
+}
+
+h2 {
+  font-size: toRem(12);
+
+  @include mobile {
+    font-size: toRem(8);
+  }
+}
+
+.paragraph {
+  line-height: 140%;
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  letter-spacing: 0%;
+
+  &__big {
+    font-size: toRem(16);
+
+    &--medium {
+      font-weight: 500;
+    }
+  }
+
+  &__base {
+    font-size: toRem(14);
+  }
+
+  &__small {
+    font-size: toRem(12);
+  }
+}
+
+.caption {
+  font-family: var(--font-family-base);
+  text-transform: uppercase;
+  line-height: 100%;
+  font-weight: 700;
+  font-size: toRem(12);
+
+  @include mobile {
+    font-size: toRem(8);
+  }
+}

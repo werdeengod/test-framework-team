@@ -1,0 +1,11 @@
+@use "@/styles/helpers" as *;
+
+.logo__container--image {
+  width: toRem(91);
+  height: toRem(20);
+
+  @include mobile {
+    width: toRem(73);
+    height: toRem(16);
+  }
+}

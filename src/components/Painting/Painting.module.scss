@@ -36,6 +36,8 @@ $mobileSMargin: 20px;
     }
   }
 
+  $paddingLeftAboutText: 12px;
+
   &__about {
     @include align-left-edge;
 
@@ -49,7 +51,7 @@ $mobileSMargin: 20px;
       position: relative;
       overflow: hidden;
       border-left: 2px solid var(--accent-color);
-      padding-left: 12px;
+      padding-left: $paddingLeftAboutText;
 
       @include mobile {
         height: 41px;
@@ -80,7 +82,7 @@ $mobileSMargin: 20px;
     transform: translateY(60px);
   }
   &:hover &__about__text--hover {
-    left: 12px;
+    left: $paddingLeftAboutText;
   }
   &:hover &__image__container--image {
     transform: scale(1.1);

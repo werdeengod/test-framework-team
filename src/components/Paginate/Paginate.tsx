@@ -72,7 +72,7 @@ const Paginate: React.FC<PaginateType> = ({ currentPage, setCurrentPage }): Reac
                     key={`page-${page}`}
                     className={
                       page === currentPage
-                        ? `paragraph paragraph__big--medium ${styles['paginate__pages__page--active']}`
+                        ? `paragraph paragraph__big paragraph__big--medium ${styles.paginate__pages__page} ${styles['paginate__pages__page--active']}`
                         : `paragraph paragraph__big ${styles.paginate__pages__page}`
                     }
                     type="button"

@@ -42,6 +42,7 @@ const Painting: React.FC<PaintingType> = ({
           <img
             className={styles['painting__image__container--image']}
             src={`${baseURL}${imageUrl}`}
+            alt="Картина художника"
           />
         </div>
         <div className={styles.painting__about}>

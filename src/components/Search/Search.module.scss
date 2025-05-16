@@ -1,4 +1,4 @@
-@use "@/styles/helpers" as *;
+@use '@/styles/helpers' as *;
 
 .search {
   width: 100%;
@@ -16,6 +16,10 @@
       border: 1px solid var(--input-border-color);
       padding: 8px 16px;
 
+      &--focused {
+        border: 1px solid var(--heading-color);
+      }
+
       @include tablet {
         width: 40%;
       }
@@ -25,7 +29,7 @@
 
       &--input {
         display: block;
-        width: 80%;
+        width: 75%;
         background-color: initial;
         outline: none;
         border: none;
@@ -46,6 +50,11 @@
       &--image {
         display: block;
         margin-right: 12px;
+      }
+
+      &__reset {
+        background-color: initial;
+        margin-left: auto;
       }
     }
   }

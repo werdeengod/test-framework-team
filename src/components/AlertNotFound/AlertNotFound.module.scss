@@ -1,9 +1,10 @@
 .alert {
+  word-break: break-all;
+
   &--header {
     color: var(--heading-color);
   }
   &--description {
     color: var(--secondary-gray);
-    word-break: break-all;
   }
 }

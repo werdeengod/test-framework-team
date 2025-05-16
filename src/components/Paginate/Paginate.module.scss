@@ -17,6 +17,8 @@
 
       &--active {
         border-radius: 5px;
+        padding: 1px 10px;
+        color: var(--heading-color);
         background-color: var(--secondary-color);
         border-bottom: 1px solid var(--secondary-color);
       }

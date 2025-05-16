@@ -1,4 +1,4 @@
-@use "@/styles/helpers" as *;
+@use '@/styles/helpers' as *;
 
 $laptopMargin: 32px;
 $mobileMargin: 24px;
@@ -44,10 +44,16 @@ $mobileSMargin: 20px;
     padding: 12px 25px 12px 0px;
 
     &__text {
+      @include flex(start, center);
+      height: 55px;
       position: relative;
       overflow: hidden;
       border-left: 2px solid var(--accent-color);
       padding-left: 12px;
+
+      @include mobile {
+        height: 41px;
+      }
 
       &--header {
         color: var(--heading-color);
@@ -64,7 +70,6 @@ $mobileSMargin: 20px;
       }
       &--hover {
         position: absolute;
-        top: 0;
         left: -150%;
         transition: left 0.8s ease;
       }
@@ -72,7 +77,7 @@ $mobileSMargin: 20px;
   }
 
   &:hover &__about__text--default {
-    transform: translateY(105%);
+    transform: translateY(60px);
   }
   &:hover &__about__text--hover {
     left: 12px;

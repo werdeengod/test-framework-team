@@ -9,14 +9,6 @@ import { getAuthors, getLocations } from '@/api/functions';
 
 import styles from './Painting.module.scss';
 
-function formatText(str: string | undefined, sub: number): string {
-  if (str === undefined) {
-    return 'Не распознано';
-  }
-
-  return str.length <= sub ? str : `${str.substring(0, sub)}...`;
-}
-
 const Painting: React.FC<PaintingType> = ({
   id,
   name,
@@ -55,15 +47,13 @@ const Painting: React.FC<PaintingType> = ({
         <div className={styles.painting__about}>
           <div className={styles.painting__about__text}>
             <div className={styles['painting__about__text--hover']}>
-              <h1 className={styles['painting__about__text--header']}>
-                {formatText(authorGet?.name, 25)}
-              </h1>
+              <h1 className={styles['painting__about__text--header']}>{authorGet?.name}</h1>
               <div className={`caption ${styles['painting__about__text--caption']}`}>
-                {formatText(locationGet?.location, 35)}
+                {locationGet?.location}
               </div>
             </div>
             <div className={styles['painting__about__text--default']}>
-              <h1 className={styles['painting__about__text--header']}>{formatText(name, 25)}</h1>
+              <h1 className={styles['painting__about__text--header']}>{name}</h1>
               <div className={`caption ${styles['painting__about__text--caption']}`}>{created}</div>
             </div>
           </div>

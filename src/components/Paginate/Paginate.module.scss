@@ -2,7 +2,7 @@
 
 .paginate {
   @include flex(center);
-  margin-top: 40px;
+  padding: 25px 0;
   gap: 20px;
 
   &__pages {

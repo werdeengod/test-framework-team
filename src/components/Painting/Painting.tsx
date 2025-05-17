@@ -17,22 +17,22 @@ const Painting: React.FC<PaintingType> = ({
   authorId,
   locationId,
 }): React.ReactNode => {
-  const authorResponse = useQuery({
-    queryKey: ['author', authorId],
+  const authorsResponse = useQuery({
+    queryKey: 'authors',
     queryFn: async () => getAuthors(),
   });
 
-  const locationResponse = useQuery({
-    queryKey: ['location', locationId],
+  const locationsResponse = useQuery({
+    queryKey: 'locations',
     queryFn: async () => getLocations(),
   });
 
-  const authorGet: AuthorType | undefined = authorResponse.data?.find(
-    author => author.id === authorId,
-  );
+  const authors = authorsResponse.data !== undefined ? authorsResponse.data : [];
+  const locations = locationsResponse.data !== undefined ? locationsResponse.data : [];
 
-  const locationGet: LocationType | undefined = locationResponse.data?.find(
-    location => location.id === locationId,
+  const author: AuthorType | undefined = authors.find((author) => author.id === authorId);
+  const location: LocationType | undefined = locations.find(
+    (location) => location.id === locationId,
   );
 
   return (
@@ -42,15 +42,16 @@ const Painting: React.FC<PaintingType> = ({
           <img
             className={styles['painting__image__container--image']}
             src={`${baseURL}${imageUrl}`}
+            loading="lazy"
             alt="Картина художника"
           />
         </div>
         <div className={styles.painting__about}>
           <div className={styles.painting__about__text}>
             <div className={styles['painting__about__text--hover']}>
-              <h1 className={styles['painting__about__text--header']}>{authorGet?.name}</h1>
+              <h1 className={styles['painting__about__text--header']}>{author?.name}</h1>
               <div className={`caption ${styles['painting__about__text--caption']}`}>
-                {locationGet?.location}
+                {location?.location}
               </div>
             </div>
             <div className={styles['painting__about__text--default']}>

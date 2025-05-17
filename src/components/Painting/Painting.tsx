@@ -30,9 +30,9 @@ const Painting: React.FC<PaintingType> = ({
   const authors = authorsResponse.data !== undefined ? authorsResponse.data : [];
   const locations = locationsResponse.data !== undefined ? locationsResponse.data : [];
 
-  const author: AuthorType | undefined = authors.find((author) => author.id === authorId);
+  const author: AuthorType | undefined = authors.find(author => author.id === authorId);
   const location: LocationType | undefined = locations.find(
-    (location) => location.id === locationId,
+    location => location.id === locationId,
   );
 
   return (

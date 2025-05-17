@@ -1,4 +1,3 @@
-import type { SetStateAction } from 'react';
 import React, { useState } from 'react';
 
 import closeIcon from '@/assets/icons/close-icon.svg';
@@ -11,7 +10,7 @@ const SearchPainting: React.FC = (): React.ReactNode => {
   const searchContext = useSearch();
   const paginateContext = usePaginate();
 
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -21,9 +20,14 @@ const SearchPainting: React.FC = (): React.ReactNode => {
     setIsFocused(false);
   };
 
-  const handleSearchChange = (e: { target: { value: SetStateAction<string> } }): void => {
-    searchContext.setSearchQuery(e.target.value);
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement> | null): void => {
+    const value = e === null ? '' : e.target.value;
+    searchContext.setSearchQuery(value);
     paginateContext.setCurrentPage(1);
+  };
+
+  const handleReset = () => {
+    handleSearchChange(null);
   };
 
   const displayResetForm = searchContext.searchQuery ? 'block' : 'none';
@@ -53,7 +57,7 @@ const SearchPainting: React.FC = (): React.ReactNode => {
                 <button
                   className={styles.search__wrapper__container__reset}
                   type="reset"
-                  onClick={() => searchContext.setSearchQuery('')}
+                  onClick={handleReset}
                   style={{ display: displayResetForm }}
                 >
                   <img

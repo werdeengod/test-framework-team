@@ -2,6 +2,7 @@ import React from 'react';
 
 import Paintings from '@/components/Paintings/Paintings';
 import SearchPainting from '@/components/Search/Search';
+import { PaginateProvider } from '@/сontext/paginate';
 import { SearchProvider } from '@/сontext/search';
 
 const Main: React.FC = (): React.ReactNode => {
@@ -9,8 +10,10 @@ const Main: React.FC = (): React.ReactNode => {
     <>
       <main>
         <SearchProvider>
-          <SearchPainting />
-          <Paintings />
+          <PaginateProvider>
+            <SearchPainting />
+            <Paintings />
+          </PaginateProvider>
         </SearchProvider>
       </main>
     </>

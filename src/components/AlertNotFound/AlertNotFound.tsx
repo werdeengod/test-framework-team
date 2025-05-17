@@ -1,4 +1,4 @@
-import type { Alert } from '@/types/AlertNotFound';
+import type { Alert } from '@/types/components/AlertNotFound';
 import React from 'react';
 import { useSearch } from '@/сontext/search';
 

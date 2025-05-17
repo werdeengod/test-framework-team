@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 
 import closeIcon from '@/assets/icons/close-icon.svg';
 import searchIcon from '@/assets/icons/search-icon.svg';
-import { useSearch } from '@/сontext/search';
+import { usePaginate, useSearch } from '@/сontext';
 
 import styles from './Search.module.scss';
 
 const SearchPainting: React.FC = (): React.ReactNode => {
   const searchContext = useSearch();
+  const paginateContext = usePaginate();
+
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -21,6 +23,7 @@ const SearchPainting: React.FC = (): React.ReactNode => {
 
   const handleSearchChange = (e: { target: { value: SetStateAction<string> } }): void => {
     searchContext.setSearchQuery(e.target.value);
+    paginateContext.setCurrentPage(1);
   };
 
   const displayResetForm = searchContext.searchQuery ? 'block' : 'none';

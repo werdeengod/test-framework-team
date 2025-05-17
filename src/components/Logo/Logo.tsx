@@ -1,9 +1,9 @@
-import type { Theme, ThemeContextType } from '@/types/ThemeType';
+import type { Theme, ThemeContextType } from '@/сontext';
 import React from 'react';
 
 import darkLogo from '@/assets/icons/dark-logo.svg';
 import lightLogo from '@/assets/icons/light-logo.svg';
-import { useTheme } from '@/сontext/theme';
+import { useTheme } from '@/сontext';
 
 import styles from './Logo.module.scss';
 

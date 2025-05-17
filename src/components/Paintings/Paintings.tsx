@@ -1,26 +1,27 @@
 import type { PaintingType } from '@/types/models/PaintingType';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 
 import { getPaintings } from '@/api/functions';
 import AlertNotFound from '@/components/AlertNotFound/AlertNotFound';
+
 import Paginate from '@/components/Paginate/Paginate';
 import Painting from '@/components/Painting/Painting';
-import { useSearch } from '@/сontext/search';
+import { usePaginate, useSearch } from '@/сontext';
 
 import styles from './Paintings.module.scss';
 
 const Paintings: React.FC = (): React.ReactNode => {
   const searchContext = useSearch();
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const paginateContext = usePaginate();
 
   const paintingsResponse = useQuery({
-    queryKey: ['paintings', searchContext.searchQuery, currentPage],
+    queryKey: ['paintings', searchContext.searchQuery, paginateContext.currentPage],
     queryFn: async () =>
       getPaintings({
         q: searchContext.searchQuery,
-        _page: currentPage,
+        _page: paginateContext.currentPage,
         _limit: 6,
       }),
   });
@@ -46,7 +47,7 @@ const Paintings: React.FC = (): React.ReactNode => {
                 />
               ))}
           </div>
-          <Paginate currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <Paginate />
         </div>
       </section>
     </>

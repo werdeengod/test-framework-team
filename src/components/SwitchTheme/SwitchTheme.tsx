@@ -1,9 +1,9 @@
-import type { Theme, ThemeContextType } from '@/types/ThemeType';
+import type { Theme, ThemeContextType } from '@/сontext';
 import React, { useEffect } from 'react';
 
 import darkIcon from '@/assets/icons/dark-icon.svg';
 import lightIcon from '@/assets/icons/light-icon.svg';
-import { useTheme } from '@/сontext/theme';
+import { useTheme } from '@/сontext';
 
 import styles from './SwitchTheme.module.scss';
 

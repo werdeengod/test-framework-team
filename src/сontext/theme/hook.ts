@@ -1,4 +1,4 @@
-import type { ThemeContextType } from '@/types/ThemeType';
+import type { ThemeContextType } from './context';
 import { useContext } from 'react';
 import { ThemeContext } from './context';
 

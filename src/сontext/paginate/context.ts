@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
 export interface PaginateContextType {
   currentPage: number
@@ -6,3 +6,12 @@ export interface PaginateContextType {
 }
 
 export const PaginateContext = createContext<PaginateContextType | null>(null);
+
+export function usePaginate(): PaginateContextType {
+  const context = useContext(PaginateContext);
+  if (context === null) {
+    throw new Error('Error with context search');
+  }
+
+  return context;
+}

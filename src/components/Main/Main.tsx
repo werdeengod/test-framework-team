@@ -2,19 +2,18 @@ import React from 'react';
 
 import Paintings from '@/components/Paintings/Paintings';
 import SearchPainting from '@/components/Search/Search';
-import { PaginateProvider } from '@/сontext/paginate';
-import { SearchProvider } from '@/сontext/search';
+import { PaginateProvider, SearchProvider } from '@/сontext';
 
 const Main: React.FC = (): React.ReactNode => {
   return (
     <>
       <main>
-        <SearchProvider>
-          <PaginateProvider>
+        <PaginateProvider>
+          <SearchProvider>
             <SearchPainting />
             <Paintings />
-          </PaginateProvider>
-        </SearchProvider>
+          </SearchProvider>
+        </PaginateProvider>
       </main>
     </>
   );

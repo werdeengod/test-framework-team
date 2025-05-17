@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 
 export type Theme = 'light' | 'dark';
 
@@ -8,3 +8,12 @@ export interface ThemeContextType {
 }
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
+
+export function useTheme(): ThemeContextType {
+  const context = useContext(ThemeContext);
+  if (context === null) {
+    throw new Error('Error with context theme');
+  }
+
+  return context;
+}

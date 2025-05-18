@@ -7,8 +7,12 @@ import styles from './AlertNotFound.module.scss';
 const AlertNotFound: React.FC<Alert> = ({ alertDisplay }): React.ReactNode => {
   const searchContext = useSearch();
 
+  if (alertDisplay === 'none') {
+    return null;
+  }
+
   return (
-    <div className={styles.alert} style={{ display: alertDisplay }}>
+    <div className={styles.alert}>
       <p className={`paragraph paragraph__big ${styles.alert__header}`}>
         No&nbsp;matches&nbsp;for&nbsp;
         <span className="paragraph paragraph__big medium">{searchContext.searchQuery}</span>

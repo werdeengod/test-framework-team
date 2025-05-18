@@ -26,8 +26,6 @@ const Paintings: React.FC = (): React.ReactNode => {
       }),
   });
 
-  useEffect(() => {});
-
   const paintings: PaintingType[] | undefined = paintingsResponse.data;
 
   return (
@@ -36,8 +34,8 @@ const Paintings: React.FC = (): React.ReactNode => {
         <div className="container">
           <AlertNotFound alertDisplay={paintings && paintings.length === 0 ? 'block' : 'none'} />
           <div className={styles.paintings}>
-            {paintings
-              && paintings.map(painting => (
+            {paintings &&
+              paintings.map((painting) => (
                 <Painting
                   key={painting.id}
                   name={painting.name}

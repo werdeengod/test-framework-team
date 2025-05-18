@@ -1,6 +1,6 @@
 import type { PaintingType } from '@/types/models/PaintingType';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 
 import { getPaintings } from '@/api/functions';
@@ -34,8 +34,8 @@ const Paintings: React.FC = (): React.ReactNode => {
         <div className="container">
           <AlertNotFound alertDisplay={paintings && paintings.length === 0 ? 'block' : 'none'} />
           <div className={styles.paintings}>
-            {paintings &&
-              paintings.map((painting) => (
+            {paintings
+              && paintings.map(painting => (
                 <Painting
                   key={painting.id}
                   name={painting.name}

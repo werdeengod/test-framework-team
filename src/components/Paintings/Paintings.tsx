@@ -28,24 +28,27 @@ const Paintings: React.FC = (): React.ReactNode => {
 
   const paintings: PaintingType[] | undefined = paintingsResponse.data;
 
+  if (paintings === undefined) {
+    return null;
+  }
+
   return (
     <>
       <section>
         <div className="container">
-          <AlertNotFound alertDisplay={paintings && paintings.length === 0 ? 'block' : 'none'} />
+          <AlertNotFound alertDisplay={paintings.length === 0 ? 'block' : 'none'} />
           <div className={styles.paintings}>
-            {paintings
-              && paintings.map(painting => (
-                <Painting
-                  key={painting.id}
-                  name={painting.name}
-                  created={painting.created}
-                  id={painting.id}
-                  authorId={painting.authorId}
-                  locationId={painting.locationId}
-                  imageUrl={painting.imageUrl}
-                />
-              ))}
+            {paintings.map(painting => (
+              <Painting
+                key={painting.id}
+                name={painting.name}
+                created={painting.created}
+                id={painting.id}
+                authorId={painting.authorId}
+                locationId={painting.locationId}
+                imageUrl={painting.imageUrl}
+              />
+            ))}
           </div>
           <Paginate />
         </div>

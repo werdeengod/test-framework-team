@@ -1,4 +1,4 @@
-import type { SearchContextType } from './context';
+import type { SearchContextType } from '@/types/contexts/SearchContextType';
 import React, { useMemo, useState } from 'react';
 import { SearchContext } from './context';
 

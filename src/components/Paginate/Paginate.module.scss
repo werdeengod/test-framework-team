@@ -1,5 +1,11 @@
 @use '@/styles/helpers' as *;
 
+@mixin hoveredButton {
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
 .paginate {
   @include flex(center);
   padding: 25px 0;
@@ -8,24 +14,29 @@
   &__pages {
     @include flex(center);
     gap: 5px;
+  }
 
-    &__page {
-      background-color: var(--bg-color);
-      padding: 1px 10px;
+  &__button {
+    background-color: var(--bg-color);
+    padding: 1px 10px;
+    color: var(--heading-color);
+    border-bottom: 1px solid var(--bg-color);
+
+    &.active {
       color: var(--heading-color);
-      border-bottom: 1px solid var(--bg-color);
-
-      &--active {
-        border-radius: 5px;
-        padding: 1px 10px;
-        color: var(--heading-color);
-        background-color: var(--secondary-color);
-        border-bottom: 1px solid var(--secondary-color);
-      }
+      @include hoveredButton;
 
       &:hover {
-        border-bottom: 1px solid var(--placeholder-color);
+        border-bottom: 1px solid var(--secondary-color);
       }
+    }
+
+    &.arrow:hover {
+      @include hoveredButton;
+    }
+
+    &:hover {
+      border-bottom: 1px solid var(--placeholder-color);
     }
   }
 

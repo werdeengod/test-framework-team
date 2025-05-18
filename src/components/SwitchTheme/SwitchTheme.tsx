@@ -1,4 +1,4 @@
-import type { Theme, ThemeContextType } from '@/сontext';
+import type { Theme, ThemeContextType } from '@/types/contexts/ThemeContextType';
 import React, { useEffect } from 'react';
 
 import darkIcon from '@/assets/icons/dark-icon.svg';
@@ -27,8 +27,8 @@ const SwitchThemeButton: React.FC = (): React.ReactNode => {
 
   return (
     <>
-      <button type="button" className={styles['button--switch']} onClick={toggleTheme}>
-        <img src={icon} alt="" />
+      <button type="button" className={styles.button__switch} onClick={toggleTheme}>
+        <img src={icon} alt="Switch theme" />
       </button>
     </>
   );

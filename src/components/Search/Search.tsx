@@ -39,15 +39,15 @@ const SearchPainting: React.FC = (): React.ReactNode => {
           <div className={styles.search}>
             <div className={styles.search__wrapper}>
               <form
-                className={`${styles.search__wrapper__container} ${isFocused ? styles['search__wrapper__container--focused'] : ''}`}
+                className={`${styles.search__wrapper__container} ${isFocused ? styles.focused : ''}`}
               >
                 <img
                   src={searchIcon}
-                  alt="Поиск"
-                  className={styles['search__wrapper__container--image']}
+                  alt="search"
+                  className={styles.search__wrapper__container__image}
                 />
                 <input
-                  className={styles['search__wrapper__container--input']}
+                  className={styles.search__wrapper__container__input}
                   type="text"
                   placeholder="Painting title"
                   onFocus={handleFocus}
@@ -62,8 +62,8 @@ const SearchPainting: React.FC = (): React.ReactNode => {
                 >
                   <img
                     src={closeIcon}
-                    alt="Очистить"
-                    className={styles['search__wrapper__container__reset--image']}
+                    alt="reset"
+                    className={styles.search__wrapper__container__reset__image}
                   />
                 </button>
               </form>

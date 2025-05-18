@@ -1,6 +1,6 @@
 import type { PaintingType } from '@/types/models/PaintingType';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 
 import { getPaintings } from '@/api/functions';
@@ -22,9 +22,11 @@ const Paintings: React.FC = (): React.ReactNode => {
       getPaintings({
         q: searchContext.searchQuery,
         _page: paginateContext.currentPage,
-        _limit: 6,
+        _limit: paginateContext.PAGINATE_LIMIT,
       }),
   });
+
+  useEffect(() => {});
 
   const paintings: PaintingType[] | undefined = paintingsResponse.data;
 

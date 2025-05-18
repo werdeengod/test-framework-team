@@ -1,4 +1,4 @@
-import type { Theme, ThemeContextType } from './context';
+import type { Theme, ThemeContextType } from '@/types/contexts/ThemeContextType';
 import React, { useMemo, useState } from 'react';
 import { ThemeContext } from './context';
 

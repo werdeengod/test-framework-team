@@ -1,4 +1,4 @@
-import type { Theme, ThemeContextType } from '@/сontext';
+import type { Theme, ThemeContextType } from '@/types/contexts/ThemeContextType';
 import React from 'react';
 
 import darkLogo from '@/assets/icons/dark-logo.svg';
@@ -19,7 +19,7 @@ const Logo: React.FC = (): React.ReactNode => {
   return (
     <>
       <div className={styles.logo__container}>
-        <img src={logo} alt="" className={styles['logo__container--image']} />
+        <img src={logo} alt="Logo" />
       </div>
     </>
   );

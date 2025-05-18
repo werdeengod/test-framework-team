@@ -1,9 +1,5 @@
+import type { PaginateContextType } from '@/types/contexts/PaginateContextType';
 import { createContext, useContext } from 'react';
-
-export interface PaginateContextType {
-  currentPage: number
-  setCurrentPage: (page: number) => void
-}
 
 export const PaginateContext = createContext<PaginateContextType | null>(null);
 

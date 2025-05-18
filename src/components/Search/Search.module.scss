@@ -16,7 +16,7 @@
       border: 1px solid var(--input-border-color);
       padding: 8px 16px;
 
-      &--focused {
+      &.focused {
         border: 1px solid var(--heading-color);
       }
 
@@ -27,7 +27,7 @@
         width: 100%;
       }
 
-      &--input {
+      &__input {
         display: block;
         width: 75%;
         background-color: initial;
@@ -47,7 +47,7 @@
           opacity: 0;
         }
       }
-      &--image {
+      &__image {
         display: block;
         margin-right: 12px;
       }

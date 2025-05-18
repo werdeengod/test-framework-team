@@ -6,13 +6,13 @@ import type { PaintingType } from '@/types/models/PaintingType';
 import axios from 'axios';
 import { baseURL } from './consts';
 
-interface Params {
+interface PaintingsParams {
   q: string | null
   _page: number | null
   _limit: number | null
 }
 
-export async function getPaintings(params: Params): Promise<PaintingType[]> {
+export async function getPaintings(params: PaintingsParams): Promise<PaintingType[]> {
   try {
     const response: AxiosResponse<PaintingType[]> = await axios({
       method: 'get',

@@ -1,9 +1,8 @@
-@use "./functions" as *;
+@use './functions' as *;
 
 $laptop: 1440;
 $tablet: 1280;
 $mobile: 768;
-$mobile-s: 320;
 
 @mixin laptop {
   @media (width <= toRem($laptop)) {
@@ -19,12 +18,6 @@ $mobile-s: 320;
 
 @mixin mobile {
   @media (width <= toRem($mobile)) {
-    @content;
-  }
-}
-
-@mixin mobile-s {
-  @media (width <= toRem($mobile-s)) {
     @content;
   }
 }

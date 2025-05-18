@@ -4,7 +4,7 @@
   @include flex(space-between);
   width: 100%;
 
-  @include mobile-s {
+  @include mobile {
     justify-content: start;
   }
 }

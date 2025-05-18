@@ -1,10 +1,5 @@
-import type { Dispatch, SetStateAction } from 'react';
+import type { SearchContextType } from '@/types/contexts/SearchContextType';
 import { createContext, useContext } from 'react';
-
-export interface SearchContextType {
-  searchQuery: string
-  setSearchQuery: Dispatch<SetStateAction<string>>
-}
 
 export const SearchContext = createContext<SearchContextType | null>(null);
 

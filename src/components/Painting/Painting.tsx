@@ -39,24 +39,19 @@ const Painting: React.FC<PaintingType> = ({
     <>
       <div className={styles.painting} id={`painting-id-${id}`}>
         <div className={styles.painting__image__container}>
-          <img
-            className={styles['painting__image__container--image']}
-            src={`${baseURL}${imageUrl}`}
-            loading="lazy"
-            alt="Картина художника"
-          />
+          <img src={`${baseURL}${imageUrl}`} loading="lazy" alt="Picture" />
         </div>
         <div className={styles.painting__about}>
           <div className={styles.painting__about__text}>
-            <div className={styles['painting__about__text--hover']}>
-              <h1 className={styles['painting__about__text--header']}>{author?.name}</h1>
-              <div className={`caption ${styles['painting__about__text--caption']}`}>
+            <div className={styles.painting__about__text__hover}>
+              <h1 className={styles.painting__about__text__header}>{author?.name}</h1>
+              <p className={`caption ${styles.painting__about__text__caption}`}>
                 {location?.location}
-              </div>
+              </p>
             </div>
-            <div className={styles['painting__about__text--default']}>
-              <h1 className={styles['painting__about__text--header']}>{name}</h1>
-              <div className={`caption ${styles['painting__about__text--caption']}`}>{created}</div>
+            <div className={styles.painting__about__text__default}>
+              <h1 className={styles.painting__about__text__header}>{name}</h1>
+              <p className={`caption ${styles.painting__about__text__caption}`}>{created}</p>
             </div>
           </div>
         </div>

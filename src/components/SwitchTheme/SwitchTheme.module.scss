@@ -1,7 +1,7 @@
-@use "@/styles/helpers" as *;
+@use '@/styles/helpers' as *;
 
-.button--switch {
-  @include square(toRem(40));
+.button__switch {
+  @include square(40px);
   @include flex(center, center);
 
   border-radius: 100%;

@@ -22,7 +22,9 @@ const Paginate: React.FC = (): React.ReactNode => {
   });
 
   const totalPages: number
-    = paintingsFullResponse.data !== undefined ? Math.ceil(paintingsFullResponse.data.length / 6) : 0;
+    = paintingsFullResponse.data !== undefined
+      ? Math.ceil(paintingsFullResponse.data.length / paginateContext.PAGINATE_LIMIT)
+      : 0;
 
   if (totalPages <= 1) {
     return null;
@@ -65,12 +67,12 @@ const Paginate: React.FC = (): React.ReactNode => {
       <div className={styles.paginate}>
         <button
           type="button"
-          className={styles.paginate__pages__page}
+          className={`${styles.paginate__button} ${styles.arrow} ${styles.left}`}
           onClick={() => {
             handlerArrowPaginate(paginateContext.currentPage - 1);
           }}
         >
-          <img src={arrowIcon} alt="Назад" className={styles['paginate__arrow--left']} />
+          <img src={arrowIcon} alt="Previous" className={styles['paginate__arrow--left']} />
         </button>
         <div className={styles.paginate__pages}>
           {visiblePages.map(page =>
@@ -80,8 +82,8 @@ const Paginate: React.FC = (): React.ReactNode => {
                     key={`page-${page}`}
                     className={
                       page === paginateContext.currentPage
-                        ? `paragraph paragraph__big paragraph__big--medium ${styles['paginate__pages__page--active']}`
-                        : `paragraph paragraph__big ${styles.paginate__pages__page}`
+                        ? `paragraph paragraph__big paragraph__big medium ${styles.paginate__button} ${styles.active}`
+                        : `paragraph paragraph__big ${styles.paginate__button}`
                     }
                     type="button"
                     onClick={() => {
@@ -94,7 +96,7 @@ const Paginate: React.FC = (): React.ReactNode => {
               : (
                   <div
                     key={`ellipsis-${Math.random()}`}
-                    className={`paragraph paragraph__big ${styles.paginate__pages__page}`}
+                    className={`paragraph paragraph__big ${styles.paginate__button}`}
                   >
                     {page}
                   </div>
@@ -103,12 +105,12 @@ const Paginate: React.FC = (): React.ReactNode => {
         </div>
         <button
           type="button"
-          className={styles.paginate__pages__page}
+          className={`${styles.paginate__button} ${styles.arrow}`}
           onClick={() => {
             handlerArrowPaginate(paginateContext.currentPage + 1);
           }}
         >
-          <img src={arrowIcon} alt="Вперед" className={styles['paginate__arrow--right']} />
+          <img src={arrowIcon} alt="Forward" className={styles['paginate__arrow--right']} />
         </button>
       </div>
     </>

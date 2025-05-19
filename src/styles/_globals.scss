@@ -14,7 +14,7 @@ body {
   font-family: var(--font-family-base);
   margin: 0 100px;
 
-  @include tablet {
+  @include laptop {
     margin: 0 20px;
   }
 }

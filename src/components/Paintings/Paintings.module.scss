@@ -6,13 +6,18 @@
   gap: 32px;
   width: 100%;
 
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
   @include mobile {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
     gap: 20px;
   }
 }

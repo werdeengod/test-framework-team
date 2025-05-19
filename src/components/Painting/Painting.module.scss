@@ -11,17 +11,9 @@
     }
   }
 
+  aspect-ratio: 392 / 260;
   position: relative;
   cursor: default;
-  height: toRem(280);
-
-  @include tablet {
-    height: toRem(220);
-  }
-
-  @include mobile {
-    height: toRem(185);
-  }
 
   &__image__container {
     overflow: hidden;

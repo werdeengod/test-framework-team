@@ -1,8 +1,15 @@
 @use './functions' as *;
 
-$laptop: 1440;
-$tablet: 1280;
+$desktop: 1440;
+$laptop: 1280;
+$tablet: 1024;
 $mobile: 768;
+
+@mixin desktop {
+  @media (width <= toRem($desktop)) {
+    @content;
+  }
+}
 
 @mixin laptop {
   @media (width <= toRem($laptop)) {

@@ -1,9 +1,5 @@
 @use '@/styles/helpers' as *;
 
-$laptopMargin: 32px;
-$mobileMargin: 24px;
-$mobileSMargin: 20px;
-
 .painting {
   opacity: 0;
   transform: translateY(20px);
@@ -17,14 +13,14 @@ $mobileSMargin: 20px;
 
   position: relative;
   cursor: default;
-  height: 280px;
+  height: toRem(280);
 
   @include tablet {
-    height: 220px;
+    height: toRem(220);
   }
 
   @include mobile {
-    height: 185px;
+    height: toRem(185);
   }
 
   &__image__container {
@@ -51,14 +47,14 @@ $mobileSMargin: 20px;
 
     &__text {
       @include flex(start, center);
-      height: 55px;
+      height: toRem(55);
       position: relative;
       overflow: hidden;
       border-left: 2px solid var(--accent-color);
       padding-left: $paddingLeftAboutText;
 
       @include mobile {
-        height: 41px;
+        height: toRem(41);
       }
 
       &__header {

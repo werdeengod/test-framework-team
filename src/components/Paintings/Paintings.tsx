@@ -39,15 +39,7 @@ const Paintings: React.FC = (): React.ReactNode => {
           <AlertNotFound alertDisplay={paintings.length === 0 ? 'block' : 'none'} />
           <div className={styles.paintings}>
             {paintings.map(painting => (
-              <Painting
-                key={painting.id}
-                name={painting.name}
-                created={painting.created}
-                id={painting.id}
-                authorId={painting.authorId}
-                locationId={painting.locationId}
-                imageUrl={painting.imageUrl}
-              />
+              <Painting key={painting.id} {...painting} />
             ))}
           </div>
           <Paginate />

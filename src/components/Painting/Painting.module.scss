@@ -17,20 +17,14 @@ $mobileSMargin: 20px;
 
   position: relative;
   cursor: default;
-  width: calc(33% - ($laptopMargin / 2));
   height: 280px;
-  margin-bottom: $laptopMargin;
 
   @include tablet {
-    width: calc(50% - ($mobileMargin / 2));
     height: 220px;
-    margin-bottom: $mobileMargin;
   }
 
   @include mobile {
-    width: 100%;
     height: 185px;
-    margin-bottom: $mobileSMargin;
   }
 
   &__image__container {

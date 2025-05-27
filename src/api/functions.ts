@@ -4,7 +4,7 @@ import type { LocationType } from '@/types/models/LocationType';
 import type { PaintingType } from '@/types/models/PaintingType';
 
 import axios from 'axios';
-import { baseURL } from './consts';
+import { BASE_API_URL } from '@/consts';
 
 interface PaintingsParams {
   q: string | null
@@ -16,7 +16,7 @@ export async function getPaintings(params: PaintingsParams): Promise<PaintingTyp
   try {
     const response: AxiosResponse<PaintingType[]> = await axios({
       method: 'get',
-      url: `${baseURL}/paintings`,
+      url: `${BASE_API_URL}/paintings`,
       params,
     });
 
@@ -35,7 +35,7 @@ export async function getAuthors(): Promise<AuthorType[]> {
   try {
     const response: AxiosResponse<AuthorType[]> = await axios({
       method: 'get',
-      url: `${baseURL}/authors`,
+      url: `${BASE_API_URL}/authors`,
     });
 
     return response.data;
@@ -53,7 +53,7 @@ export async function getLocations(): Promise<LocationType[]> {
   try {
     const response: AxiosResponse<LocationType[]> = await axios({
       method: 'get',
-      url: `${baseURL}/locations`,
+      url: `${BASE_API_URL}/locations`,
     });
 
     return response.data;

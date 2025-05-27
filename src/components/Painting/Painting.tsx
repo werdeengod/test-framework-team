@@ -4,8 +4,8 @@ import type { PaintingType } from '@/types/models/PaintingType';
 import React from 'react';
 
 import { useQuery } from 'react-query';
-import { baseURL } from '@/api/consts';
 import { getAuthors, getLocations } from '@/api/functions';
+import { BASE_API_URL } from '@/consts';
 
 import styles from './Painting.module.scss';
 
@@ -39,7 +39,7 @@ const Painting: React.FC<PaintingType> = ({
     <>
       <div className={styles.painting} id={`painting-id-${id}`}>
         <div className={styles.painting__image__container}>
-          <img src={`${baseURL}${imageUrl}`} loading="lazy" alt="Picture" />
+          <img src={`${BASE_API_URL}${imageUrl}`} loading="lazy" alt="Picture" />
         </div>
         <div className={styles.painting__about}>
           <div className={styles.painting__about__text}>

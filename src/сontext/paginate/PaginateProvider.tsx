@@ -1,8 +1,8 @@
 import type { PaginateContextType } from '@/types/contexts/PaginateContextType';
 import React, { useMemo, useState } from 'react';
-import { PaginateContext } from './context';
 
-const PAGINATE_LIMIT: number = 6;
+import { PAGINATE_LIMIT } from '@/consts';
+import { PaginateContext } from './context';
 
 export function PaginateProvider({ children }: { children: React.ReactNode }): React.ReactNode {
   const [currentPage, setCurrentPage] = useState<number>(1);

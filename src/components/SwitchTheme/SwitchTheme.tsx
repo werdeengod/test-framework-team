@@ -1,5 +1,5 @@
 import type { Theme, ThemeContextType } from '@/types/contexts/ThemeContextType';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import darkIcon from '@/assets/icons/dark-icon.svg';
 import lightIcon from '@/assets/icons/light-icon.svg';
@@ -18,12 +18,9 @@ const SwitchThemeButton: React.FC = (): React.ReactNode => {
 
   const toggleTheme = (): void => {
     const newTheme = themeContext.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
     themeContext.setTheme(newTheme);
   };
-
-  useEffect((): void => {
-    document.body.setAttribute('data-theme', themeContext.theme);
-  }, [themeContext.theme]);
 
   return (
     <>

@@ -1,18 +1,22 @@
+import { useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import Header from '@/components/Header/Header';
 import Main from '@/components/Main/Main';
-import { ThemeProvider } from '@/сontext/theme';
+
+import { DEFAULT_THEME } from '@/consts';
 
 const queryClient = new QueryClient();
 
 function App() {
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', DEFAULT_THEME);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <Header />
-        <Main />
-      </ThemeProvider>
+      <Header />
+      <Main />
     </QueryClientProvider>
   );
 }
